@@ -1,13 +1,82 @@
--keep class com.moto.actions.* {
-  *;
+# Mantener todas las clases y sus miembros en el paquete com.moto.actions
+-keep class com.moto.actions.** {
+    *;
 }
 
+# Mantener todas las clases que tienen un constructor que toma Context y AttributeSet
 -keepclasseswithmembers class * {
     public <init>(android.content.Context, android.util.AttributeSet);
 }
 
--keep class ** extends android.support.v14.preference.PreferenceFragment
+# Mantener todas las clases que extienden android.support.v14.preference.PreferenceFragment
+-keep class ** extends android.support.v14.preference.PreferenceFragment {
+    *;
+}
 
+# Mantener la clase MotoActionsSearchIndexablesProvider y todos sus miembros
 -keep class com.moto.actions.MotoActionsSearchIndexablesProvider {
-  *;
+    *;
+}
+
+# Mantener las clases que son proveedores de contenido
+-keep public class * extends android.content.ContentProvider {
+    public static ** PROVIDER_NAME;
+}
+
+# Mantener las clases que son receptores de broadcast
+-keep public class * extends android.content.BroadcastReceiver {
+    public <init>();
+    public void onReceive(android.content.Context, android.content.Intent);
+}
+
+# Mantener las clases que son servicios
+-keep public class * extends android.app.Service {
+    public <init>();
+    public void onStart(android.content.Intent, int);
+    public void onStartCommand(android.content.Intent, int, int);
+    public void onCreate();
+    public void onDestroy();
+    public android.os.IBinder onBind(android.content.Intent);
+}
+
+# Mantener las clases que son actividades
+-keep public class * extends android.app.Activity {
+    public <init>();
+    public void onCreate(android.os.Bundle);
+    public void onStart();
+    public void onResume();
+    public void onPause();
+    public void onStop();
+    public void onDestroy();
+}
+
+# Mantener las clases que son fragmentos
+-keep public class * extends android.app.Fragment {
+    public <init>();
+    public void onCreate(android.os.Bundle);
+    public void onActivityCreated(android.os.Bundle);
+    public void onStart();
+    public void onResume();
+    public void onPause();
+    public void onStop();
+    public void onDestroy();
+}
+
+# Mantener los métodos anotados con @Keep
+-keep @androidx.annotation.Keep class * {
+    *;
+}
+
+-keepclassmembers class * {
+    @androidx.annotation.Keep *;
+}
+
+# Mantener las clases que extienden PreferenceFragment de androidx
+-keep class ** extends androidx.preference.PreferenceFragment {
+    *;
+}
+
+# Mantener todas las clases que son actions
+-keep class com.moto.actions.actions.** {
+    *;
 }

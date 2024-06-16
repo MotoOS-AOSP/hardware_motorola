@@ -5,9 +5,6 @@ include $(CLEAR_VARS)
 
 LOCAL_MODULE_TAGS := optional
 
-LOCAL_SRC_FILES := \
-    $(LOCAL_PATH)/src \
-
 LOCAL_MANIFEST_FILE := AndroidManifest.xml
 
 LOCAL_PACKAGE_NAME := MotoActions
@@ -31,7 +28,9 @@ LOCAL_RESOURCE_DIR := \
     $(LOCAL_PATH)/res \
     $(LOCAL_PATH)/res-strings \
 
-LOCAL_PROGUARD_ENABLED := enabled
+LOCAL_SRC_FILES := $(call all-java-files-under, src)
+
+
 LOCAL_DEX_PREOPT := true
 
 include frameworks/base/packages/SettingsLib/common.mk
