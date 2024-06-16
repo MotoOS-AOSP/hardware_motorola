@@ -1,0 +1,6 @@
+<resources>
+    <!-- Existing colors -->
+
+    <!-- New color definitions -->
+    <color name="colorAccent">#FF4081</color>
+</resources>

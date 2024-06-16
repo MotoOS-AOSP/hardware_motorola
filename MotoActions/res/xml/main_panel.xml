@@ -19,52 +19,77 @@
         xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
         android:title="@string/moto_actions_title">
 
-    <Preference
-        android:key="gestures"
-        android:title="@string/device_gestures_title"
-        android:summary="@string/device_gestures_summary"
-        android:icon="@drawable/ic_settings_gestures">
+    <PreferenceCategory
+        android:title="@string/gesture_settings_category"
+        android:titleTextAppearance="?android:attr/textAppearanceMedium"
+        android:titleTextColor="@color/colorAccent">
+        
+        <Preference
+            android:key="gestures"
+            android:title="@string/device_gestures_title"
+            android:summary="@string/device_gestures_summary"
+            android:icon="@drawable/ic_settings_gestures">
+                <intent
+                    android:targetPackage="com.moto.actions"
+                    android:targetClass="com.moto.actions.GestureSettingsActivity" />
+        </Preference>
+        
+        <Preference
+            android:key="fp_gestures"
+            android:title="@string/fingerprint_gestures_title"
+            android:summary="@string/fingerprint_gestures_manage_summary"
+            android:icon="@drawable/ic_settings_fingerprint">
+                <intent
+                    android:targetPackage="com.moto.actions"
+                    android:targetClass="com.moto.actions.FPGestureSettingsActivity" />
+        </Preference>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/display_settings_category"
+        android:titleTextAppearance="?android:attr/textAppearanceMedium"
+        android:titleTextColor="@color/colorAccent">
+
+        <Preference
+            android:key="doze"
+            android:title="@string/ambient_display_title"
+            android:summary="@string/ambient_display_manage_summary"
+            android:icon="@drawable/ic_settings_doze">
+                <intent
+                    android:targetPackage="com.moto.actions"
+                    android:targetClass="com.moto.actions.DozeSettingsActivity" />
+        </Preference>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/assistant_settings_category"
+        android:titleTextAppearance="?android:attr/textAppearanceMedium"
+        android:titleTextColor="@color/colorAccent">
+
+        <ListPreference
+            android:key="assistant_button"
+            android:dialogTitle="@string/assistant_button_action"
+            android:title="@string/assistant_button_action"
+            android:summary="%s"
+            android:entries="@array/fp_keys_listArray"
+            android:entryValues="@array/fp_keys_listValues"
+            android:icon="@drawable/ic_assistant_key" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/stylus_settings_category"
+        android:titleTextAppearance="?android:attr/textAppearanceMedium"
+        android:titleTextColor="@color/colorAccent">
+
+        <Preference
+            android:key="stylus"
+            android:title="@string/stylus_title"
+            android:persistent="false"
+            android:icon="@drawable/ic_stylus">
             <intent
-                android:targetPackage="com.moto.actions"
-                android:targetClass="com.moto.actions.GestureSettingsActivity" />
-    </Preference>
-
-    <Preference
-        android:key="doze"
-        android:title="@string/ambient_display_title"
-        android:summary="@string/ambient_display_manage_summary"
-        android:icon="@drawable/ic_settings_doze">
-            <intent
-                android:targetPackage="com.moto.actions"
-                android:targetClass="com.moto.actions.DozeSettingsActivity" />
-    </Preference>
-
-    <Preference
-        android:key="fp_gestures"
-        android:title="@string/fingerprint_gestures_title"
-        android:summary="@string/fingerprint_gestures_manage_summary"
-        android:icon="@drawable/ic_settings_fingerprint">
-            <intent
-                android:targetPackage="com.moto.actions"
-                android:targetClass="com.moto.actions.FPGestureSettingsActivity" />
-    </Preference>
-
-    <ListPreference
-        android:key="assistant_button"
-        android:dialogTitle="@string/assistant_button_action"
-        android:title="@string/assistant_button_action"
-        android:summary="%s"
-        android:entries="@array/fp_keys_listArray"
-        android:entryValues="@array/fp_keys_listValues"
-        android:icon="@drawable/ic_assistant_key" />
-
-    <Preference
-        android:key="stylus"
-        android:title="@string/stylus_title"
-        android:persistent="false"
-        android:icon="@drawable/ic_stylus" >
-        <intent
-             android:targetPackage="com.motorola.stylus"
-             android:targetClass="com.motorola.stylus.settings.activity.SettingsActivity" />
-    </Preference>
+                android:targetPackage="com.motorola.stylus"
+                android:targetClass="com.motorola.stylus.settings.activity.SettingsActivity" />
+        </Preference>
+    </PreferenceCategory>
 </PreferenceScreen>
+

@@ -1,0 +1,6 @@
+// hardware/motorola/MotoActions/Android.bp
+android_library_import {
+name: "window-1.3.0",
+aars: ["libs/window-1.3.0.aar"],
+}
+
