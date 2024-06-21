@@ -505,6 +505,9 @@ public class KeyHandler implements DeviceKeyHandler {
             }else if (action != ACTION_VOICE_ASSISTANT) {
                 doHapticFeedbackFP(false);
             }
+        } else {
+        // habilitar una vibracion suave para todos los gestos en su totalidad 
+        vibrate(10);
         }
         switch (action) {
             case ACTION_HOME:

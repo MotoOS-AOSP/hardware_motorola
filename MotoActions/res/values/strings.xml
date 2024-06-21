@@ -148,4 +148,20 @@
 
     <!-- Stylus -->
     <string name="stylus_title">Stylus settings</string>
+
+     <string name="gesture_settings_category">Configuración de Gestos</string>
+    <string name="display_settings_category">Configuración de Pantalla</string>
+    <string name="assistant_settings_category">Configuración del Asistente</string>
+    <string name="stylus_settings_category">Configuración del Stylus</string>
+
+    <!-- Default values for missing resources -->
+    <string name="screen_off_gestures_swipe_down_dlg_title">Swipe Down Gesture</string>
+    <string name="screen_off_gestures_swipe_down_title">Swipe Down</string>
+    <string name="screen_off_gestures_swipe_left_dlg_title">Swipe Left Gesture</string>
+    <string name="screen_off_gestures_swipe_left_title">Swipe Left</string>
+    <string name="screen_off_gestures_swipe_right_dlg_title">Swipe Right Gesture</string>
+    <string name="screen_off_gestures_swipe_right_title">Swipe Right</string>
+    <string name="screen_off_gestures_swipe_up_dlg_title">Swipe Up Gesture</string>
+    <string name="screen_off_gestures_swipe_up_title">Swipe Up</string>
+    <string name="screen_off_gestures_title">Screen Off Gestures</string>
 </resources>
