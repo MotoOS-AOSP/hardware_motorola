@@ -505,9 +505,6 @@ public class KeyHandler implements DeviceKeyHandler {
             }else if (action != ACTION_VOICE_ASSISTANT) {
                 doHapticFeedbackFP(false);
             }
-        } else {
-        // Para el botón de asistente de voz, vibrar con menos tiempo
-        vibrate(20); // Vibración rápida para el asistente de voz
         }
         switch (action) {
             case ACTION_HOME:

@@ -2,7 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.moto.actions"
     xmlns:tools="http://schemas.android.com/tools"
-    android:sharedUserId="android.uid.system">
+    android:sharedUserId="android.uid.system"
+    >
 
     <original-package android:name="com.cyanogenmod.settings.device" />
 
@@ -99,6 +100,6 @@
             android:theme="@style/Theme.SubSettingsBase"
             android:exported="false">
         </activity>
-
     </application>
+
 </manifest>

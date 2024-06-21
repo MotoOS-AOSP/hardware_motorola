@@ -24,8 +24,4 @@
         <item name="android:textColor">@android:color/primary_text_dark</item>
         <item name="android:background">@android:color/background_light</item>
     </style>
-
-    <style name="CategoryTitleTextAppearance" parent="TextAppearance.AppCompat.Medium">
-        <item name="android:textColor">@color/colorAccent</item>
-    </style>
 </resources>

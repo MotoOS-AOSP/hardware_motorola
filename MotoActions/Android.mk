@@ -1,3 +1,5 @@
+# device/motorola/sm8250-common/MotoActions/Android.mk
+
 LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
 
@@ -13,13 +15,12 @@ LOCAL_USE_AAPT2 := true
 
 LOCAL_OPTIONAL_USES_LIBRARIES := \
     androidx.window.extensions \
-    androidx.window.sidecar \
+    androidx.window.sidecar
 
 LOCAL_STATIC_ANDROID_LIBRARIES := \
     androidx.core_core \
     android-support-v13 \
-    androidx.preference_preference \
-    window-1.3.0 \
+    androidx.preference_preference
 
 LOCAL_PROGUARD_FLAG_FILES := proguard.flags
 
@@ -28,6 +29,7 @@ LOCAL_RESOURCE_DIR := \
     $(LOCAL_PATH)/res-strings \
 
 LOCAL_SRC_FILES := $(call all-java-files-under, src)
+
 
 LOCAL_DEX_PREOPT := true
 
