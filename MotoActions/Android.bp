@@ -43,6 +43,7 @@ android_app {
         "android-support-v13",
         "androidx.preference_preference",
         "window-1.3.0",
+        "SettingsLib",
     ],
     optimize: {
         proguard_flags_files: ["proguard.flags"],

@@ -17,6 +17,7 @@
 package com.moto.actions;
 
 import android.os.Bundle;
+import android.widget.Toolbar;
 import com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity;
 
 public class ActionsPreferenceActivity extends CollapsingToolbarBaseActivity {
@@ -24,9 +25,18 @@ public class ActionsPreferenceActivity extends CollapsingToolbarBaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (savedInstanceState == null){
+        setContentView(R.layout.activity_actions_preference);
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        if (toolbar != null) {
+            toolbar.setTitle(R.string.moto_actions_title); // Configura el título del Toolbar
+            setActionBar(toolbar); // Configura el Toolbar como la ActionBar
+        }
+
+        if (savedInstanceState == null) {
             getFragmentManager().beginTransaction()
-	            .replace(R.id.content_frame, new ActionsPreferenceFragment()).commit();
+                .replace(R.id.content_frame, new ActionsPreferenceFragment()).commit();
         }
     }
 }
+

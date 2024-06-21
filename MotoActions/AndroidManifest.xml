@@ -2,17 +2,18 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.moto.actions"
     xmlns:tools="http://schemas.android.com/tools"
-    android:sharedUserId="android.uid.system"
-    >
+    android:sharedUserId="android.uid.system">
 
     <original-package android:name="com.cyanogenmod.settings.device" />
 
+    <!-- Declarar permisos necesarios -->
     <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
     <uses-permission android:name="android.permission.VIBRATE"/>
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.USE_FINGERPRINT" />
-    <uses-permission android:name="android.permission.READ_SEARCH_INDEXABLES" />
+    <uses-permission android:name="android.permission.READ_SEARCH_INDEXABLES" /> <!-- Asegurarse de que este permiso esté declarado -->
+
     <protected-broadcast android:name="com.android.systemui.doze.pulse" />
 
     <uses-sdk
@@ -24,7 +25,8 @@
         android:label="@string/moto_actions_title"
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         tools:replace="android:appComponentFactory"
-        android:persistent="true">
+        android:persistent="true"
+        android:supportsRtl="true">
 
         <provider
             android:name="androidx.startup.InitializationProvider"
@@ -33,7 +35,7 @@
 
         <provider
             android:name=".MotoActionsSearchIndexablesProvider"
-            android:authorities="com.moto.actions"
+            android:authorities="com.moto.actions.MotoActionsSearchIndexablesProvider"
             android:multiprocess="false"
             android:grantUriPermissions="true"
             android:permission="android.permission.READ_SEARCH_INDEXABLES"
@@ -74,7 +76,7 @@
             android:name=".ActionsPreferenceActivity"
             android:label="@string/moto_actions_title"
             android:summary="@string/device_gestures_summary"
-            android:theme="@style/Theme.SubSettingsBase"
+            android:theme="@style/AppTheme"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.android.settings.action.IA_SETTINGS" />

@@ -2,6 +2,7 @@
 <!--
      Copyright (C) 2016 The CyanogenMod Project
      Copyright (C) 2017 The LineageOS Project
+     Copyright (C) 2024 Seba_3567
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
      You may obtain a copy of the License at
@@ -16,6 +17,32 @@
     <style name="MotoActions.SwitchBar" parent="@android:style/ThemeOverlay.Material.ActionBar">
     </style>
 
+    <!-- Base application theme without ActionBar -->
+    <style name="AppTheme.NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here -->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <!-- Base application theme with Dark ActionBar -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here -->
+        <item name="colorPrimary">@android:color/holo_blue_bright</item>
+        <item name="colorPrimaryDark">@android:color/holo_blue_dark</item>
+        <item name="colorAccent">@android:color/holo_green_light</item>
+        <item name="android:textColor">@android:color/primary_text_dark</item>
+        <item name="android:background">@android:color/background_light</item>
+    </style>
+
+
+    <!-- Define AppBarOverlay style -->
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+    </style>
+
+    <!-- Define PopupOverlay style -->
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light">
+    </style>
+
     <style name="Theme.SubSettingsBase" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Additional properties for customization -->
         <item name="colorPrimary">@android:color/holo_blue_bright</item>
@@ -23,6 +50,8 @@
         <item name="colorAccent">@android:color/holo_green_light</item>
         <item name="android:textColor">@android:color/primary_text_dark</item>
         <item name="android:background">@android:color/background_light</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
     </style>
 
     <style name="CategoryTitleTextAppearance" parent="TextAppearance.AppCompat.Medium">
