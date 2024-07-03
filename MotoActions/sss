@@ -1,0 +1,49 @@
+// Define the main application module
+android_app {
+    name: "MotoActions",
+    srcs: ["src/**/*.java"],
+    defaults: ["SettingsLibDefaults"],
+
+    // Include resource directories
+    resource_dirs: [
+        "res",
+        "res-strings",
+    ],
+
+    // Specify the manifest file
+    manifest: "AndroidManifest.xml",
+
+    // Specify the certificate
+    certificate: "platform",
+
+    // Indicate that this is a privileged module
+    privileged: true,
+
+    system_ext_specific: true, // INSTALL ON SYSTEM_EXT
+
+    // Indicate that this module uses platform APIs
+    platform_apis: true,
+
+    // Optional uses libraries
+    optional_uses_libs: [
+        "androidx.window.extensions",
+        "androidx.window.sidecar",
+    ],
+
+    // Static Android libraries
+    static_libs: [
+        "androidx.core_core",
+        "android-support-v13",
+        "androidx.preference_preference",
+        "window-1.3.0",
+        "SettingsLib",
+    ],
+    optimize: {
+        proguard_flags_files: ["proguard.flags"],
+    },
+
+    // Enable DEX pre-optimization
+    dex_preopt: {
+        enabled: true,
+    },
+} 
